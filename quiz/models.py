@@ -15,7 +15,7 @@ class Exam(models.Model):
 class Question(models.Model):
     """Modelo para las preguntas"""
     exam = models.ForeignKey(Exam, on_delete=models.CASCADE, related_name='questions')
-    text = models.TextField(verbose_name="Texto de la pregunta")
+    text = models.TextField(verbose_name="Texto de la pregunta", null=True, blank=True)
     
     def __str__(self):
         return self.text[:50]
